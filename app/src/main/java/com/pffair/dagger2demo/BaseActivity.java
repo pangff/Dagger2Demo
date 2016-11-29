@@ -11,18 +11,10 @@ import android.support.v7.app.AppCompatActivity;
 
 public class BaseActivity extends AppCompatActivity {
 
-    BaseAComponent mBaseAComponent;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mBaseAComponent = DaggerBaseAComponent.builder()
-                .applicationComponent(MyApplication.getInstance().getApplicationComponent())
-                .baseAModule(new BaseAModule(this)).build();
-    }
-
-    public BaseAComponent getBaseAComponent() {
-        return mBaseAComponent;
     }
 
 }

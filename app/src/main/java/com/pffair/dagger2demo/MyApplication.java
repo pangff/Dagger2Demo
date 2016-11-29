@@ -9,8 +9,6 @@ import android.app.Application;
 
 public class MyApplication extends Application {
 
-    private ApplicationComponent mApplicationComponent;
-
     private static MyApplication myApplication;
 
     public static MyApplication getInstance(){
@@ -21,13 +19,5 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         myApplication = this;
-        mApplicationComponent = DaggerApplicationComponent.builder()
-                .applicationModule(new ApplicationModule(this)).build();
     }
-
-    public ApplicationComponent getApplicationComponent() {
-        return mApplicationComponent;
-    }
-
-
 }

@@ -1,25 +1,14 @@
 package com.pffair.dagger2demo;
 
-import android.util.Log;
-
 import dagger.Component;
 
 /**
- * Created by pangff on 16/11/11.
+ * Created by pangff on 16/11/28.
  * Description MainComponent
  */
+@Component(modules = {User.class,Role.class})
+public interface MainComponent {
 
-@MobileScope
-@Component(dependencies = BaseAComponent.class, modules = MainModule.class)
-public abstract class MainComponent {
+    void inject(MainActivity mainActivity);
 
-    abstract void inject(MainActivity activity);
-
-    abstract void inject(SecondActivity activity);
-
-    public static MainComponent getInstance(BaseActivity activity) {
-        Log.e("pangff","adsfa"+activity);
-        return DaggerMainComponent.builder().baseAComponent(activity.getBaseAComponent()).mainModule(new MainModule())
-                .build();
-    }
 }
