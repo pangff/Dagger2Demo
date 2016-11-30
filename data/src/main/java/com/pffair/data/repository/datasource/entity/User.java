@@ -1,21 +1,15 @@
-package com.pffair.dagger2demo;
-
-import javax.inject.Inject;
-
-import dagger.Module;
+package com.pffair.data.repository.datasource.entity;
 
 /**
  * Created by pangff on 16/11/11.
  * Description User
  */
-@Module
 public class User {
 
     private String name;
 
-    @Inject
-    public User(){
-        this.name= "ABC";
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getName(){

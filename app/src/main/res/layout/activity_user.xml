@@ -12,23 +12,24 @@
         android:paddingBottom="@dimen/activity_vertical_margin"
         tools:context="com.pffair.dagger2demo.MainActivity">
 
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:orientation="horizontal"
+                  android:gravity="center"
+                  android:layout_height="wrap_content">
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_remote_user"
+                android:text="远程数据"/>
+
+    </LinearLayout>
+
+
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tv_text"
-            android:text="Dagger2+mvp"/>
-
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/bt_btn_user"
-            android:text="UserActivity"/>
-
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/bt_btn_book"
-            android:text="BookActivity"/>
-
+            android:text="Hello World!"/>
 
 </LinearLayout>

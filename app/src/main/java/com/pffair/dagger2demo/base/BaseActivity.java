@@ -1,4 +1,4 @@
-package com.pffair.dagger2demo;
+package com.pffair.dagger2demo.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
