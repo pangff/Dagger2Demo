@@ -1,31 +1,25 @@
 package com.pffair.dagger2demo;
 
+import com.pffair.dagger2demo.annotation.AnnotationTargetBean;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import javax.inject.Inject;
-
 public class MainActivity extends BaseActivity {
-
-    @Inject
-    User mUser;
-
-    @Inject
-    User mUser2;
-
-    @Inject
-    Role mRole;
 
     TextView mTextView;
 
     Button btBtn;
 
+    AnnotationTargetBean mAnnotationTragetBean;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mAnnotationTragetBean = new AnnotationTargetBean();
 //       DaggerMainComponent.builder().build().inject(this);
 
 //        MainActivity_MembersInjector.create(new Provider<User>() {
@@ -45,14 +39,14 @@ public class MainActivity extends BaseActivity {
 //            }
 //        }).injectMembers(this);
 
-        DaggerMainComponent.builder().role(new Role("是Android开发")).build().inject(this);
+//        DaggerMainComponent.builder().role(new Role("是Android开发")).build().inject(this);
         initView();
 
     }
 
     private void initView(){
         mTextView = (TextView) findViewById(R.id.tv_text);
-        mTextView.setText(mUser.getName()+mRole.getName());
+//        mTextView.setText(mUser.getName()+mRole.getName());
         btBtn = (Button) findViewById(R.id.bt_btn);
         btBtn.setOnClickListener(new View.OnClickListener() {
             @Override
