@@ -3,7 +3,6 @@ package com.pffair.dagger2demo;
 import javax.inject.Inject;
 
 import dagger.Module;
-import dagger.Provides;
 
 /**
  * Created by pangff on 16/11/28.
@@ -19,7 +18,7 @@ public class Role {
         this.name = name;
     }
 
-    @Provides
+//    @Provides
     public String provideName() {
         return name;
     }
